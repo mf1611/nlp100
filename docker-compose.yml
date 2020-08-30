@@ -1,0 +1,11 @@
+version: "3"
+services:
+  jupyter:  # 立ち上げるサービスの名称(コンテナ名を指定しない場合，これが利用される)
+    image: kaggle_base:latest  # imageの指定
+    container_name: nlp100  # コンテナ名
+    volumes:
+      - $PWD:/project
+    working_dir: /project/
+    ports:
+      - 2222:8888
+    command: jupyter notebook
